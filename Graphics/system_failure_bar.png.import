@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex"
+path="res://.import/system_failure_bar.png-244fb9440d5daf1aade50e7d31290dbb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/square.png"
-dest_files=[ "res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex" ]
+source_file="res://Graphics/system_failure_bar.png"
+dest_files=[ "res://.import/system_failure_bar.png-244fb9440d5daf1aade50e7d31290dbb.stex" ]
 
 [params]
 

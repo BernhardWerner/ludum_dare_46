@@ -15,17 +15,30 @@
    inkscape:version="1.0rc1 (09960d6f05, 2020-04-09)"
    sodipodi:docname="images.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <rect
+       x="383.41602"
+       y="188.01569"
+       width="308.28041"
+       height="227.00217"
+       id="rect852" />
+    <rect
+       x="138.33929"
+       y="312.96429"
+       width="458.10714"
+       height="153.45833"
+       id="rect846" />
+  </defs>
   <sodipodi:namedview
      id="base"
-     pagecolor="#ffffff"
+     pagecolor="#c2c2c2"
      bordercolor="#666666"
      borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="400"
-     inkscape:cy="560"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="2188.1159"
+     inkscape:cy="1183.4961"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -34,7 +47,8 @@
      inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     inkscape:pagecheckerboard="true" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -52,7 +66,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#992929;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect835"
        width="93.856194"
        height="93.856194"
@@ -63,6 +77,44 @@
        inkscape:connector-curvature="0"
        id="path831"
        d="M 0,0 V 100 L 152.21667,50 Z"
-       style="fill:#20ff71;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       id="path832"
+       style="fill:#ffffff;stroke-width:5.66929;stroke-linecap:round;stroke-linejoin:round;fill-opacity:1"
+       d="M 373.59766 439.70312 A 331.99282 331.99282 0 0 0 42.160156 771.69727 A 331.99282 331.99282 0 0 0 374.15234 1103.6895 A 331.99282 331.99282 0 0 0 706.14648 771.69727 A 331.99282 331.99282 0 0 0 374.15234 439.70312 A 331.99282 331.99282 0 0 0 373.59766 439.70312 z M 373.4707 451.13281 A 320.56424 320.56424 0 0 1 374.15234 451.13281 A 320.56424 320.56424 0 0 1 694.7168 771.69727 A 320.56424 320.56424 0 0 1 374.15234 1092.2598 A 320.56424 320.56424 0 0 1 53.589844 771.69727 A 320.56424 320.56424 0 0 1 373.4707 451.13281 z "
+       transform="scale(0.26458333)"
+       inkscape:export-xdpi="69.400002"
+       inkscape:export-ydpi="69.400002" />
+    <rect
+       y="188.01569"
+       x="383.41602"
+       height="15.237146"
+       width="336.51691"
+       id="rect842"
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-xdpi="32.46228"
+       inkscape:export-ydpi="32.46228" />
+    <text
+       xml:space="preserve"
+       id="text844"
+       style="font-style:normal;font-weight:normal;font-size:35.2778px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect846);fill:#000000;fill-opacity:1;stroke:none;"><tspan
+         sodipodi:role="line"
+         x="138.33984"
+         y="345.9215"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:condensed;font-family:'Agency FB';-inkscape-font-specification:'Agency FB Bold Condensed'">Admin</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text850"
+       style="fill:black;fill-opacity:1;stroke:none;font-family:sans-serif;font-style:normal;font-weight:normal;font-size:10.58333333px;line-height:1.25;letter-spacing:0px;word-spacing:0px;white-space:pre;shape-inside:url(#rect852);" />
+    <rect
+       inkscape:export-ydpi="25.086418"
+       inkscape:export-xdpi="25.086418"
+       ry="11.516871"
+       y="287.88693"
+       x="475.42218"
+       height="50"
+       width="200"
+       id="rect843"
+       style="fill:#000000;stroke:#ffffff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:0.5" />
   </g>
 </svg>

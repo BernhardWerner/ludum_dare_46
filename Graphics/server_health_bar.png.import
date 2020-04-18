@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex"
+path="res://.import/server_health_bar.png-7c45b4c62ef0b8f54e6c6863ae626754.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/square.png"
-dest_files=[ "res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex" ]
+source_file="res://Graphics/server_health_bar.png"
+dest_files=[ "res://.import/server_health_bar.png-7c45b4c62ef0b8f54e6c6863ae626754.stex" ]
 
 [params]
 

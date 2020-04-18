@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Player
 
 export var speed := 400.0
 export var gravity := 1000.0
@@ -18,7 +19,7 @@ func get_input() -> Vector2:
 
 func _ready() -> void:
 	yield(owner, "ready")
-	GameManager.player = self
+	owner.player = self
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
@@ -27,6 +28,12 @@ func _input(event: InputEvent) -> void:
 #		elif is_on_wall():
 #			velocity.y -= 0.5 * sqrt(2) * jump_strength
 #			velocity.x -= 0.5 * sqrt(2) * jump_strength * get_input().x
+
+	##### DEBUG CONTROLS
+	if event is InputEventKey and event.pressed:
+		match event.scancode:
+			KEY_R:
+				get_tree().reload_current_scene()
 
 
 func _physics_process(delta: float) -> void:

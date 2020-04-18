@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex"
+path="res://.import/ring.png-86455cd82c9fb15acb0490431bd79711.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/square.png"
-dest_files=[ "res://.import/square.png-4d8e4693d54b41244da036cdec584435.stex" ]
+source_file="res://Graphics/ring.png"
+dest_files=[ "res://.import/ring.png-86455cd82c9fb15acb0490431bd79711.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

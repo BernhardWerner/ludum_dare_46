@@ -5,12 +5,12 @@ export var speed := 400.0
 export var gravity := 1500.0
 export var jump_strength := 650.0
 
-export var wall_push_multiplier := 3
 
 export var acceleration := 0.25
 export var friction := 0.5
 
-export var wall_perception = 20.0
+export var wall_perception = 10.0
+export var wall_push_multiplier := 3.0
 
 var move_dir := Vector2.ZERO
 var velocity := Vector2.ZERO
@@ -28,6 +28,9 @@ func get_input() -> Vector2:
 func _ready() -> void:
 	yield(owner, "ready")
 	owner.player = self
+	
+	$FrontWallRay.cast_to.x = wall_perception
+	$BackWallRay.cast_to.x = - 1.5 * wall_perception
 	
 
 func _input(event: InputEvent) -> void:

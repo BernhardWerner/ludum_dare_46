@@ -1,5 +1,7 @@
 extends Node
 
+export var time_to_sunrise := 120.0 
+
 var number_of_broken_servers := 0 setget set_broken_servers
 
 onready var player : KinematicBody2D
@@ -15,6 +17,11 @@ func set_broken_servers(value : int) -> void:
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	$SunriseTimer.wait_time = time_to_sunrise
+	$SunriseTimer.start()
+	
+	
 
 
 func _input(event: InputEvent) -> void:
@@ -28,6 +35,8 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	$GUI/SystemFailureBar.value += number_of_broken_servers * delta
 	
+	$Background.material.set_shader_param("relative_time_left", $SunriseTimer.time_left / time_to_sunrise)
+	
 ######################### SIGNALS #########################
 
 func _on_Server_state_changed(new_state : int) -> void:
@@ -37,3 +46,7 @@ func _on_Server_state_changed(new_state : int) -> void:
 func _on_SystemFailureBar_value_changed(value: float) -> void:
 	if value == $GUI/SystemFailureBar.max_value:
 		SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+
+
+func _on_SunriseTimer_timeout():
+	SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")

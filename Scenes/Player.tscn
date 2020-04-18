@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Graphics/player_00.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/player_01.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 9, 17.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -33,23 +33,28 @@ start_node = "idle"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 1, 0 )
 script = ExtResource( 2 )
+wall_perception = 12.0
+wall_push_multiplier = 1.5
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1.5 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-shape = SubResource( 1 )
+position = Vector2( 0, -1.55 )
+shape = SubResource( 6 )
 
 [node name="FrontWallRay" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 20, 0 )
+cast_to = Vector2( 10, 0 )
 collision_mask = 2
 
 [node name="BackWallRay" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( -30, 0 )
+cast_to = Vector2( -15, 0 )
 collision_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]

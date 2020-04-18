@@ -5,6 +5,9 @@ export var speed := 400.0
 export var gravity := 1000.0
 export var jump_strength := 530.0
 
+export var acceleration := 0.25
+export var friction := 0.5
+
 var velocity := Vector2.ZERO
 
 ######################### CUSTOM METHODS #########################
@@ -37,12 +40,20 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var new_velocity = get_input()
-	new_velocity.x *= speed
-	new_velocity.y = velocity.y + gravity * delta
+	var move_dir = get_input()
 	
-	velocity = move_and_slide(new_velocity, Vector2.UP)
+	if move_dir.x == 0:
+		velocity.x = lerp(velocity.x, 0, friction)
+	else:
+		velocity.x = lerp(velocity.x, move_dir.x * speed, acceleration)
+		$Sprite.flip_h = (-0.5 * move_dir.x + 0.5) as bool
+		
+	velocity.y += gravity * delta * (10 if move_dir.y == -1 else 1)
 	
+	
+	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	print($WallRay.is_colliding())
 			
 
 

@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 
 func _on_Server_state_changed(new_state : int) -> void:
 	self.number_of_broken_servers += 2 * new_state - 1
-	print(number_of_broken_servers)
 
 
 func _on_SystemFailureBar_value_changed(value: float) -> void:

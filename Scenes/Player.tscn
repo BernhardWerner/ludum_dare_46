@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Graphics/player_01.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/player_01_idle-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -9,6 +9,7 @@ extents = Vector2( 9, 17.5 )
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
 loop = true
+step = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -16,10 +17,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=3]
@@ -41,6 +42,7 @@ wall_push_multiplier = 1.5
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -1.5 )
 texture = ExtResource( 1 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

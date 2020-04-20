@@ -55,8 +55,10 @@ func _physics_process(delta: float) -> void:
 	move_dir = get_input()
 	
 	if move_dir.x == 0:
+		$AnimationPlayer.play("idle")
 		velocity.x = lerp(velocity.x, 0, friction)
 	else:
+		$AnimationPlayer.play("run")
 		velocity.x = lerp(velocity.x, move_dir.x * speed, acceleration)
 		$Sprite.flip_h = (-0.5 * move_dir.x + 0.5) as bool
 		$FrontWallRay.cast_to.x = wall_perception * move_dir.x

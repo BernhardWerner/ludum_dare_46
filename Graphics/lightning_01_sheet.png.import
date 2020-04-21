@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/player_01_idle_run-Sheet.png-1f7d088f9ea9dcec64d10928f80ec8c0.stex"
+path="res://.import/lightning_01_sheet.png-101f8e6bed34be7904fba8e799b308e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/player_01_idle_run-Sheet.png"
-dest_files=[ "res://.import/player_01_idle_run-Sheet.png-1f7d088f9ea9dcec64d10928f80ec8c0.stex" ]
+source_file="res://Graphics/lightning_01_sheet.png"
+dest_files=[ "res://.import/lightning_01_sheet.png-101f8e6bed34be7904fba8e799b308e8.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

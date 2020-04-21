@@ -50,7 +50,6 @@ wall_push_multiplier = 1.5
 position = Vector2( 0, -1.5 )
 texture = ExtResource( 1 )
 hframes = 4
-frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false

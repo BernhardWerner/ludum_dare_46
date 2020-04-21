@@ -20,10 +20,11 @@ vec4 o_plus_4(vec4 x, vec4 y) {
 
 void fragment() {
 	float rise_time = min(time_passed, 0.5);
-	float grow_time = 2.0 * max(0.0, time_passed - 0.5);
+	//float grow_time = 2.0 * max(0.0, time_passed - 0.5);
+	float grow_time = time_passed;
 	vec2 sun_center = vec2(0.5, 1.0 - rise_time);
 	float sun = 1.0 - (6.0 - 5.0 * grow_time) * distance(UV, sun_center);
 	
-	//COLOR = o_plus_4(start_color, sun * end_color);
+
 	COLOR = texture(gradient, vec2(sun, 0.5));
 }

@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 func _on_StartButton_pressed() -> void:
-	SceneSwitcher.goto_scene("res://Scenes/LevelTemplate.tscn")
+	SceneSwitcher.goto_scene("res://Scenes/WorldSelect.tscn")
 
 
 func _on_QuitButton_pressed() -> void:

@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Graphics/button.theme" type="Theme" id=1]
 [ext_resource path="res://Graphics/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/WorldSelect.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/server_00_running.png" type="Texture" id=4]
+[ext_resource path="res://AGENCYR.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Graphics/server_00_broken.png" type="Texture" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 5 )
 
 [node name="WorldSelect" type="Control"]
 anchor_right = 1.0
@@ -16,6 +23,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.188235, 0.223529, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -33,14 +43,73 @@ __meta__ = {
 margin_right = 860.0
 margin_bottom = 87.0
 custom_fonts/font = ExtResource( 2 )
-text = "Select Level"
+text = "Select World"
 align = 1
 
-[node name="WorldButtonContainer" type="GridContainer" parent="VBoxContainer"]
-margin_left = 205.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 137.0
-margin_right = 655.0
+margin_right = 860.0
 margin_bottom = 262.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 107.0
+margin_right = 155.0
+margin_bottom = 125.0
+custom_constants/separation = 25
+
+[node name="ServerInfo1" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 48.0
+custom_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/ServerInfo1"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 48 )
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/ServerInfo1"]
+margin_left = 34.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="ServerInfo3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 73.0
+margin_right = 48.0
+margin_bottom = 121.0
+custom_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer/ServerInfo3"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 48 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/ServerInfo3"]
+margin_left = 34.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="WorldButtonContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 205.0
+margin_right = 655.0
+margin_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -51,43 +120,99 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="World1Button" type="Button" parent="VBoxContainer/WorldButtonContainer"]
-margin_left = -1.0
-margin_right = 199.0
+[node name="World1Button" type="Button" parent="VBoxContainer/HBoxContainer/WorldButtonContainer"]
+margin_right = 200.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
-text = "World 1"
+text = "The Plain"
 
-[node name="World2Button" type="Button" parent="VBoxContainer/WorldButtonContainer"]
-margin_left = 249.0
-margin_right = 449.0
+[node name="World2Button" type="Button" parent="VBoxContainer/HBoxContainer/WorldButtonContainer"]
+margin_left = 250.0
+margin_right = 450.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
-text = "World 2"
+disabled = true
+text = "The Pyramid"
 
-[node name="World3Button" type="Button" parent="VBoxContainer/WorldButtonContainer"]
-margin_left = -1.0
+[node name="World3Button" type="Button" parent="VBoxContainer/HBoxContainer/WorldButtonContainer"]
 margin_top = 75.0
-margin_right = 199.0
+margin_right = 200.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
-text = "World 3"
+disabled = true
+text = "The Ravine"
 
-[node name="World4Button" type="Button" parent="VBoxContainer/WorldButtonContainer"]
-margin_left = 249.0
+[node name="World4Button" type="Button" parent="VBoxContainer/HBoxContainer/WorldButtonContainer"]
+margin_left = 250.0
 margin_top = 75.0
-margin_right = 449.0
+margin_right = 450.0
 margin_bottom = 125.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
-text = "World 4"
+disabled = true
+text = "The Bolt"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_left = 705.0
+margin_right = 753.0
+margin_bottom = 125.0
+custom_constants/separation = 25
+alignment = 1
+
+[node name="ServerInfo2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 2.0
+margin_right = 48.0
+margin_bottom = 50.0
+custom_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ServerInfo2"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 48 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ServerInfo2"]
+margin_left = 34.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="ServerInfo4" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 75.0
+margin_right = 48.0
+margin_bottom = 123.0
+custom_constants/separation = 10
+
+[node name="Icon" type="TextureRect" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ServerInfo4"]
+margin_right = 24.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 24, 48 )
+texture = ExtResource( 6 )
+expand = true
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ServerInfo4"]
+margin_left = 34.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 43.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 1
+valign = 1
 
 [node name="BackButton" type="Button" parent="VBoxContainer"]
 margin_left = 330.0
@@ -101,8 +226,8 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="VBoxContainer/WorldButtonContainer/World1Button" to="." method="_on_World1Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorldButtonContainer/World2Button" to="." method="_on_World2Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorldButtonContainer/World3Button" to="." method="_on_World3Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/WorldButtonContainer/World4Button" to="." method="_on_World4Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WorldButtonContainer/World1Button" to="." method="_on_World1Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WorldButtonContainer/World2Button" to="." method="_on_World2Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WorldButtonContainer/World3Button" to="." method="_on_World3Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/WorldButtonContainer/World4Button" to="." method="_on_World4Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

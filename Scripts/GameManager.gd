@@ -1,6 +1,7 @@
 extends Node
 
 export var time_to_sunrise := 120.0 
+export var world_number := 0
 
 var number_of_broken_servers := 0 setget set_broken_servers
 
@@ -21,7 +22,19 @@ func _ready() -> void:
 	$SunriseTimer.wait_time = time_to_sunrise
 	$SunriseTimer.start()
 	
-	
+	# Spawn servers
+	var spawn_points := $ServerSpawns.get_children().slice(0, GlobalVariables.server_numbers[world_number - 1] - 1)
+	var server_scene := preload("res://Scenes/Server.tscn")
+	for sp in spawn_points:
+		sp = sp as ServerSpawn
+		var new_server : Server = server_scene.instance()
+		new_server.time_to_break           = sp.time_to_break
+		new_server.time_to_break_variation = sp.time_to_break_variation
+		new_server.global_position         = sp.global_position
+		$Servers.add_child(new_server)
+	$ServerSpawns.queue_free()
+		
+		
 
 
 func _input(event: InputEvent) -> void:

@@ -1,7 +1,8 @@
-extends Node
+extends Position2D
+class_name ServerSpawn
 
-var worlds_unlocked := [true, false, false, false]
-var server_numbers  := [10, 1, 1, 1]
+export(float) var time_to_break : float = 5.0
+export(float) var time_to_break_variation : float = 1.0
 
 ######################### CUSTOM METHODS #########################
 

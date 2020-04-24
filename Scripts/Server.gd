@@ -1,4 +1,5 @@
 extends Area2D
+class_name Server
 
 enum STATES {RUNNING, BROKEN}
 
@@ -24,7 +25,11 @@ func set_state(value : int) -> void:
 ######################### BUILT-INS #########################
 
 func _ready() -> void:
-	# Set pulse color
+	# Set states
+	self.state = STATES.RUNNING
+	
+	
+		# Set pulse color
 	var broken_color_blank = broken_color * 1.5
 	broken_color_blank.a = 0
 	$Pulse.process_material.color_ramp.gradient.set_color(0, broken_color * 1.5)
@@ -39,9 +44,7 @@ func _ready() -> void:
 	randomize()
 	$BreakTimer.wait_time = time_to_break + rand_range(-time_to_break_variation, time_to_break_variation)
 
-	# Set states
-	yield(owner, "ready")
-	self.state = STATES.RUNNING
+
 	
 	# Connect to Game Manager
 	connect("state_changed", get_parent().get_parent(), "_on_Server_state_changed")

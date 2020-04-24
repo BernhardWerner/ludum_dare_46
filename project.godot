@@ -13,9 +13,21 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Scripts/Player.gd"
+}, {
+"base": "Area2D",
+"class": "Server",
+"language": "GDScript",
+"path": "res://Scripts/Server.gd"
+}, {
+"base": "Position2D",
+"class": "ServerSpawn",
+"language": "GDScript",
+"path": "res://Scripts/ServerSpawn.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"Player": "",
+"Server": "",
+"ServerSpawn": ""
 }
 
 [application]

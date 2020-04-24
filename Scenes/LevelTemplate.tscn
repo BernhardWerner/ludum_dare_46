@@ -221,7 +221,7 @@ margin_bottom = 200.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 10 )
-text = "Quit"
+text = "To main menu"
 
 [node name="GameOver" type="Popup" parent="GUI"]
 pause_mode = 2
@@ -280,7 +280,69 @@ margin_bottom = 125.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 10 )
-text = "Quit"
+text = "To main menu"
+
+[node name="WinScreen" type="Popup" parent="GUI"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.188235, 0.223529, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/WinScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 25.0
+margin_right = -50.0
+margin_bottom = -25.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="GUI/WinScreen/VBoxContainer"]
+margin_top = 84.0
+margin_right = 862.0
+margin_bottom = 171.0
+custom_fonts/font = ExtResource( 9 )
+text = "You made it through the night shift!"
+align = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="GUI/WinScreen/VBoxContainer"]
+margin_top = 221.0
+margin_right = 862.0
+margin_bottom = 346.0
+custom_constants/separation = 25
+
+[node name="RestartButton" type="Button" parent="GUI/WinScreen/VBoxContainer/ButtonContainer"]
+margin_left = 331.0
+margin_right = 531.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+theme = ExtResource( 10 )
+text = "Next night"
+
+[node name="QuitButton" type="Button" parent="GUI/WinScreen/VBoxContainer/ButtonContainer"]
+margin_left = 331.0
+margin_top = 75.0
+margin_right = 531.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 200, 50 )
+size_flags_horizontal = 4
+theme = ExtResource( 10 )
+text = "To main menu"
 [connection signal="timeout" from="SunriseTimer" to="." method="_on_SunriseTimer_timeout"]
 [connection signal="value_changed" from="GUI/SystemFailureBar" to="." method="_on_SystemFailureBar_value_changed"]
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/ResumeButton" to="GUI/PauseMenu" method="_on_ResumeButton_pressed"]
@@ -291,3 +353,5 @@ text = "Quit"
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="GUI/GameOver/VBoxContainer/ButtonContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GUI/GameOver/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="GUI/WinScreen/VBoxContainer/ButtonContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="GUI/WinScreen/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

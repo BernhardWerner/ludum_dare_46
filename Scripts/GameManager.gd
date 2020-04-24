@@ -65,7 +65,12 @@ func _on_SystemFailureBar_value_changed(value: float) -> void:
 
 
 func _on_SunriseTimer_timeout():
-	SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	GlobalVariables.server_numbers[world_number - 1] += 1
+	GlobalVariables.update_world_locks()
+	$GUI/WinScreen.show()
+	
 
 
 func _on_RestartButton_pressed() -> void:

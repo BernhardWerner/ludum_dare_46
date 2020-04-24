@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Graphics/button.theme" type="Theme" id=1]
 [ext_resource path="res://Graphics/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/WorldSelect.gd" type="Script" id=3]
-[ext_resource path="res://Graphics/server_00_running.png" type="Texture" id=4]
 [ext_resource path="res://AGENCYR.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://Graphics/server_00_broken.png" type="Texture" id=6]
 
@@ -68,7 +67,7 @@ custom_constants/separation = 10
 margin_right = 24.0
 margin_bottom = 48.0
 rect_min_size = Vector2( 24, 48 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 expand = true
 stretch_mode = 1
 
@@ -126,6 +125,7 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 1 )
+disabled = true
 text = "The Plain"
 
 [node name="World2Button" type="Button" parent="VBoxContainer/HBoxContainer/WorldButtonContainer"]

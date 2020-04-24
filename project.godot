@@ -27,6 +27,7 @@ config/icon="res://Graphics/game_icon_01.png"
 [autoload]
 
 SceneSwitcher="*res://Scripts/SceneSwitcher.gd"
+GlobalVariables="*res://Scripts/GlobalVariables.gd"
 
 [display]
 

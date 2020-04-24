@@ -35,7 +35,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
-		if is_on_floor():
+		if is_on_floor() or not $CoyoteTimer.is_stopped():
 			velocity.y -= jump_strength
 		elif $FrontWallRay.is_colliding():
 			if move_dir.x == sign($FrontWallRay.cast_to.x):
@@ -76,6 +76,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = wall_push_multiplier * jump_strength * move_dir.x
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	if is_on_floor():
+		$CoyoteTimer.start()
 	
 
 

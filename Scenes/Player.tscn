@@ -79,3 +79,7 @@ anims/run = SubResource( 3 )
 [node name="WallJumpBuffer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

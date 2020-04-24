@@ -69,7 +69,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
-time_to_sunrise = 10.0
+time_to_sunrise = 120.0
 
 [node name="Sky" type="Sprite" parent="."]
 material = ExtResource( 3 )

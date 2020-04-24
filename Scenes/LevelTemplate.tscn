@@ -69,6 +69,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
+time_to_sunrise = 10.0
 
 [node name="Sky" type="Sprite" parent="."]
 material = ExtResource( 3 )
@@ -345,11 +346,8 @@ theme = ExtResource( 10 )
 text = "To main menu"
 [connection signal="timeout" from="SunriseTimer" to="." method="_on_SunriseTimer_timeout"]
 [connection signal="value_changed" from="GUI/SystemFailureBar" to="." method="_on_SystemFailureBar_value_changed"]
-[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/ResumeButton" to="GUI/PauseMenu" method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/RestartButton" to="GUI/PauseMenu" method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
-[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/QuitButton" to="GUI/PauseMenu" method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="GUI/GameOver/VBoxContainer/ButtonContainer/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="GUI/GameOver/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]

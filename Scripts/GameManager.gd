@@ -67,7 +67,7 @@ func _on_SystemFailureBar_value_changed(value: float) -> void:
 func _on_SunriseTimer_timeout():
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	GlobalVariables.server_numbers[world_number - 1] += 1
+	GlobalVariables.server_numbers[world_number - 1] = min(GlobalVariables.server_numbers[world_number - 1] + 1, 10)
 	GlobalVariables.update_world_locks()
 	$GUI/WinScreen.show()
 	
@@ -84,6 +84,6 @@ func _on_QuitButton_pressed() -> void:
 
 
 func _on_ResumeButton_pressed() -> void:
-	self.visible = false
+	$GUI/PauseMenu.visible = false
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

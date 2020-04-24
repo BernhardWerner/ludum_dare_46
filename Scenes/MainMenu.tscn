@@ -55,7 +55,7 @@ margin_right = 200.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 200, 50 )
 theme = ExtResource( 3 )
-text = "Start Game"
+text = "Start game"
 
 [node name="QuitButton" type="Button" parent="HBoxContainer/VBoxContainer/ButtonContainer"]
 margin_top = 70.0

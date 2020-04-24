@@ -21,7 +21,10 @@ _global_script_class_icons={
 [application]
 
 config/name="ludum_dare_46"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Scenes/BootScreen.tscn"
+boot_splash/image="res://Graphics/empty_image.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://Graphics/game_icon_01.png"
 
 [autoload]

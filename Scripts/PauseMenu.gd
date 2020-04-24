@@ -22,3 +22,8 @@ func _on_ResumeButton_pressed() -> void:
 func _on_QuitButton_pressed() -> void:
 	get_tree().paused = false
 	SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+
+
+func _on_RestartButton_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()

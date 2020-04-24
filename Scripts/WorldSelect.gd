@@ -4,6 +4,7 @@ extends Control
 func _ready() -> void:
 	var world_buttons := $VBoxContainer/HBoxContainer/WorldButtonContainer.get_children()
 	var server_infos := $VBoxContainer/HBoxContainer/VBoxContainer.get_children() + $VBoxContainer/HBoxContainer/VBoxContainer2.get_children()
+	server_infos = [server_infos[0], server_infos[2], server_infos[1], server_infos[3]]
 	for i in range(4):
 		if GlobalVariables.worlds_unlocked[i]:
 			world_buttons[i].disabled = false

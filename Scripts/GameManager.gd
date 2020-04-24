@@ -59,8 +59,26 @@ func _on_Server_state_changed(new_state : int) -> void:
 
 func _on_SystemFailureBar_value_changed(value: float) -> void:
 	if value == $GUI/SystemFailureBar.max_value:
-		SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$GUI/GameOver.show()
 
 
 func _on_SunriseTimer_timeout():
 	SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+
+
+func _on_RestartButton_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+
+
+func _on_QuitButton_pressed() -> void:
+	get_tree().paused = false
+	SceneSwitcher.goto_scene("res://Scenes/MainMenu.tscn")
+
+
+func _on_ResumeButton_pressed() -> void:
+	self.visible = false
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

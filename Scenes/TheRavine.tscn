@@ -147,33 +147,53 @@ shape = SubResource( 8 )
 
 [node name="ServerSpawn1" parent="ServerSpawns" index="0" instance=ExtResource( 3 )]
 position = Vector2( 704, 1024 )
+time_to_break = 10.0
+time_to_break_variation = 1.0
 
 [node name="ServerSpawn2" parent="ServerSpawns" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1600, 1024 )
+time_to_break = 10.0
+time_to_break_variation = 1.0
 
 [node name="ServerSpawn3" parent="ServerSpawns" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1664, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn4" parent="ServerSpawns" index="3" instance=ExtResource( 3 )]
 position = Vector2( 640, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn5" parent="ServerSpawns" index="4" instance=ExtResource( 3 )]
 position = Vector2( 576, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn6" parent="ServerSpawns" index="5" instance=ExtResource( 3 )]
 position = Vector2( 1728, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn7" parent="ServerSpawns" index="6" instance=ExtResource( 3 )]
 position = Vector2( 1792, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn8" parent="ServerSpawns" index="7" instance=ExtResource( 3 )]
 position = Vector2( 512, 1024 )
+time_to_break = 25.0
+time_to_break_variation = 5.0
 
 [node name="ServerSpawn9" parent="ServerSpawns" index="8" instance=ExtResource( 3 )]
 position = Vector2( 1856, 1024 )
+time_to_break = 35.0
+time_to_break_variation = 10.0
 
 [node name="ServerSpawn10" parent="ServerSpawns" index="9" instance=ExtResource( 3 )]
 position = Vector2( 448, 1024 )
+time_to_break = 35.0
+time_to_break_variation = 10.0
 
 [editable path="Obstacles/MovingPlattform"]
 

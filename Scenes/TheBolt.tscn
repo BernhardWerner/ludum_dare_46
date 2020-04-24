@@ -39,30 +39,48 @@ position = Vector2( 1456, 1392 )
 
 [node name="ServerSpawn1" parent="ServerSpawns" index="0" instance=ExtResource( 3 )]
 position = Vector2( 768, 1408 )
+time_to_break = 25.0
+time_to_break_variation = 15.0
 
 [node name="ServerSpawn2" parent="ServerSpawns" index="1" instance=ExtResource( 3 )]
 position = Vector2( 1536, 1408 )
+time_to_break = 25.0
+time_to_break_variation = 15.0
 
 [node name="ServerSpawn3" parent="ServerSpawns" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1536, 1568 )
+time_to_break = 20.0
+time_to_break_variation = 11.0
 
 [node name="ServerSpawn4" parent="ServerSpawns" index="3" instance=ExtResource( 3 )]
 position = Vector2( 768, 1568 )
+time_to_break = 20.0
+time_to_break_variation = 11.0
 
 [node name="ServerSpawn5" parent="ServerSpawns" index="4" instance=ExtResource( 3 )]
 position = Vector2( 768, 1728 )
+time_to_break = 15.0
+time_to_break_variation = 7.0
 
 [node name="ServerSpawn6" parent="ServerSpawns" index="5" instance=ExtResource( 3 )]
 position = Vector2( 1536, 1728 )
+time_to_break = 15.0
+time_to_break_variation = 7.0
 
 [node name="ServerSpawn7" parent="ServerSpawns" index="6" instance=ExtResource( 3 )]
 position = Vector2( 1536, 1888 )
+time_to_break_variation = 3.0
 
 [node name="ServerSpawn8" parent="ServerSpawns" index="7" instance=ExtResource( 3 )]
 position = Vector2( 768, 1888 )
+time_to_break_variation = 3.0
 
 [node name="ServerSpawn9" parent="ServerSpawns" index="8" instance=ExtResource( 3 )]
 position = Vector2( 1088, 1280 )
+time_to_break = 8.0
+time_to_break_variation = 2.0
 
 [node name="ServerSpawn10" parent="ServerSpawns" index="9" instance=ExtResource( 3 )]
 position = Vector2( 1216, 1280 )
+time_to_break = 8.0
+time_to_break_variation = 2.0

@@ -11,30 +11,46 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="ServerSpawn1" parent="ServerSpawns" index="0" instance=ExtResource( 2 )]
 position = Vector2( 1120, 1376 )
+time_to_break = 5.0
 
 [node name="ServerSpawn2" parent="ServerSpawns" index="1" instance=ExtResource( 2 )]
 position = Vector2( 1184, 1376 )
+time_to_break = 5.0
 
 [node name="ServerSpawn3" parent="ServerSpawns" index="2" instance=ExtResource( 2 )]
 position = Vector2( 672, 1440 )
+time_to_break = 15.0
+time_to_break_variation = 1.0
 
 [node name="ServerSpawn4" parent="ServerSpawns" index="3" instance=ExtResource( 2 )]
 position = Vector2( 1632, 1440 )
+time_to_break = 15.0
+time_to_break_variation = 1.0
 
 [node name="ServerSpawn5" parent="ServerSpawns" index="4" instance=ExtResource( 2 )]
 position = Vector2( 1024, 1600 )
+time_to_break = 20.0
+time_to_break_variation = 19.0
 
 [node name="ServerSpawn6" parent="ServerSpawns" index="5" instance=ExtResource( 2 )]
 position = Vector2( 1280, 1600 )
+time_to_break = 20.0
+time_to_break_variation = 19.0
 
 [node name="ServerSpawn7" parent="ServerSpawns" index="6" instance=ExtResource( 2 )]
 position = Vector2( 1056, 1376 )
+time_to_break = 5.0
 
 [node name="ServerSpawn8" parent="ServerSpawns" index="7" instance=ExtResource( 2 )]
 position = Vector2( 1248, 1376 )
+time_to_break = 5.0
 
 [node name="ServerSpawn9" parent="ServerSpawns" index="8" instance=ExtResource( 2 )]
 position = Vector2( 416, 1440 )
+time_to_break = 30.0
+time_to_break_variation = 1.0
 
 [node name="ServerSpawn10" parent="ServerSpawns" index="9" instance=ExtResource( 2 )]
 position = Vector2( 1888, 1440 )
+time_to_break = 30.0
+time_to_break_variation = 1.0

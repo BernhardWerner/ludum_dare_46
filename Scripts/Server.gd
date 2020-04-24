@@ -18,6 +18,10 @@ signal state_changed(new_state)
 
 ######################### CUSTOM METHODS #########################
 
+func set_break_time() -> void:
+	$BreakTimer.wait_time = time_to_break + rand_range(-time_to_break_variation, time_to_break_variation)
+
+
 func set_state(value : int) -> void:
 	state = value
 	emit_signal("state_changed", value)
@@ -42,7 +46,9 @@ func _ready() -> void:
 	
 	# Set timer time
 	randomize()
-	$BreakTimer.wait_time = time_to_break + rand_range(-time_to_break_variation, time_to_break_variation)
+	set_break_time()
+	
+	emit_signal("state_changed", STATES.RUNNING)
 
 
 	
@@ -70,6 +76,7 @@ func _on_Server_state_changed(new_state : int) -> void:
 			$BackSprite/Lights.self_modulate = running_color * 1.3
 			$Pulse.visible = false
 			$Health.max_value = $BreakTimer.wait_time
+			set_break_time()
 			$BreakTimer.start()
 			$SoundTimer.stop()
 		STATES.BROKEN:

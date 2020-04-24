@@ -1,7 +1,7 @@
 extends Node
 
 var worlds_unlocked := [true, false, false, false]
-var server_numbers  := [10, 1, 1, 1]
+var server_numbers  := [10, 0, 0, 0]
 
 ######################### CUSTOM METHODS #########################
 

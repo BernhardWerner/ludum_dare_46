@@ -1,27 +1,40 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Graphics/lightning_01_sheet.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/lightning_02_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/LightningDoor.gd" type="Script" id=2]
 [ext_resource path="res://Graphics/lightning_door_contacts.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/lightning_02_alt_sheet.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 32, 96 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
 region = Rect2( 32, 0, 32, 96 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
+region = Rect2( 64, 0, 32, 96 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
 region = Rect2( 64, 0, 32, 96 )
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "default",
-"speed": 15.0
+"speed": 30.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=5]
@@ -31,9 +44,10 @@ height = 68.0556
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
+modulate = Color( 1.2, 1.2, 1.2, 1 )
 scale = Vector2( 0.75, 0.9 )
 frames = SubResource( 4 )
+frame = 4
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

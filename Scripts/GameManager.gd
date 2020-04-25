@@ -41,8 +41,8 @@ func _ready() -> void:
 		new_server.global_position         = sp.global_position
 		$Servers.add_child(new_server)
 	$ServerSpawns.queue_free()
-		
-		
+	
+
 
 
 func _input(event: InputEvent) -> void:

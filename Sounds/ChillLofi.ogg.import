@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ChillLofi.ogg-fec2e396a3ca90f6902076cc2dc1d5e6.oggstr"
+
+[deps]
+
+source_file="res://Sounds/ChillLofi.ogg"
+dest_files=[ "res://.import/ChillLofi.ogg-fec2e396a3ca90f6902076cc2dc1d5e6.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

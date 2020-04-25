@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Graphics/square.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Graphics/system_failure_bar.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=5]
 [ext_resource path="res://Graphics/system_failure_bar_border.png" type="Texture" id=6]
+[ext_resource path="res://Sounds/63 Pulse.ogg" type="AudioStream" id=7]
 [ext_resource path="res://AGENCYB.TTF" type="DynamicFontData" id=8]
 [ext_resource path="res://Graphics/title_font.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Graphics/button.theme" type="Theme" id=10]
@@ -343,6 +344,11 @@ rect_min_size = Vector2( 200, 50 )
 size_flags_horizontal = 4
 theme = ExtResource( 10 )
 text = "To main menu"
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
 [connection signal="timeout" from="SunriseTimer" to="." method="_on_SunriseTimer_timeout"]
 [connection signal="value_changed" from="GUI/SystemFailureBar" to="." method="_on_SystemFailureBar_value_changed"]
 [connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/ButtonContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]

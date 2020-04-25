@@ -9,3 +9,4 @@ func go_to_main_menu() -> void:
 
 func _ready():
 	GlobalVariables.load_game()
+	GlobalVariables.menu_bgm.play()

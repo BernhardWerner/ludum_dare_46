@@ -5,6 +5,8 @@ const servers_needed_to_unlock := [0, 5, 10, 16]
 var worlds_unlocked := [true, false, false, false]
 var server_numbers  := [1, 0, 0, 0]
 
+var menu_bgm := AudioStreamPlayer.new()
+
 ######################### CUSTOM METHODS #########################
 
 func load_game() -> void:
@@ -45,6 +47,11 @@ func update_world_locks() -> void:
 func _ready() -> void:
 	add_to_group("persist")
 	print(self.filename)
+	
+	menu_bgm.stream = preload("res://Sounds/ChillLofi.ogg")
+	menu_bgm.volume_db = -10
+	add_child(menu_bgm)
+
 
 ######################### SIGNALS #########################
 

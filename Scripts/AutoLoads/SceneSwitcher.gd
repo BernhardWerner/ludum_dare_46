@@ -10,6 +10,15 @@ func deferred_goto_scene(path) -> void:
 	if (weakref(current_scene).get_ref()):
 		current_scene.free()
 	current_scene = new_scene.instance()
+	
+	
+	if GlobalVariables.menu_bgm.playing:
+		if not current_scene.is_in_group("menu"):
+			GlobalVariables.menu_bgm.stop()
+	else:
+		if current_scene.is_in_group("menu"):
+			GlobalVariables.menu_bgm.play()
+		
 
 	get_tree().get_root().add_child(current_scene)
 	get_tree().set_current_scene(current_scene)

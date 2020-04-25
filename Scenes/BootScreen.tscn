@@ -82,7 +82,9 @@ tracks/5/keys = {
 "values": [ Color( 0, 0, 0, 1 ), Color( 0.0196078, 0.211765, 0.392157, 1 ) ]
 }
 
-[node name="BootScreen" type="Control"]
+[node name="BootScreen" type="Control" groups=[
+"menu",
+]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 3 )

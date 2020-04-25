@@ -1,8 +1,9 @@
 extends Node
 
-var worlds_unlocked := [true, true, false, false]
-var server_numbers  := [7, 2, 0, 0]
-var servers_needed_to_unlock := [0, 5, 10, 16]
+const servers_needed_to_unlock := [0, 5, 10, 16]
+
+var worlds_unlocked := [true, false, false, false]
+var server_numbers  := [1, 0, 0, 0]
 
 ######################### CUSTOM METHODS #########################
 

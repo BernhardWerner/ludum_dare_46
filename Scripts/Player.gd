@@ -79,6 +79,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		$CoyoteTimer.start()
+	else:
+		$AnimationPlayer.play("jump")
 	
 
 

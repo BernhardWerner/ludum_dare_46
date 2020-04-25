@@ -8,4 +8,4 @@ func go_to_main_menu() -> void:
 ######################### BUILT-INS #########################
 
 func _ready():
-	SaveSystem.load_game()
+	GlobalVariables.load_game()

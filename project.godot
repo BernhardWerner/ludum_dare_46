@@ -43,7 +43,6 @@ config/icon="res://Graphics/game_icon_01.png"
 
 SceneSwitcher="*res://Scripts/AutoLoads/SceneSwitcher.gd"
 GlobalVariables="*res://Scripts/AutoLoads/GlobalVariables.gd"
-SaveSystem="*res://Scripts/AutoLoads/SaveSystem.gd"
 
 [display]
 

@@ -7,6 +7,8 @@ var number_of_broken_servers := 0 setget set_broken_servers
 
 onready var player : KinematicBody2D
 
+signal level_complete(world_number)
+
 ######################### CUSTOM METHODS #########################
 
 
@@ -25,6 +27,8 @@ func _ready() -> void:
 	
 	$SunriseTimer.wait_time = time_to_sunrise
 	$SunriseTimer.start()
+	
+	connect("level_complete", GlobalVariables, "_on_level_complete")
 	
 	# Spawn servers
 	var spawn_points := $ServerSpawns.get_children().slice(0, GlobalVariables.server_numbers[world_number - 1] - 1)
@@ -71,9 +75,7 @@ func _on_SystemFailureBar_value_changed(value: float) -> void:
 func _on_SunriseTimer_timeout():
 	get_tree().paused = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	GlobalVariables.server_numbers[world_number - 1] = min(GlobalVariables.server_numbers[world_number - 1] + 1, 10)
-	GlobalVariables.update_world_locks()
-	SaveSystem.save_game()
+	emit_signal("level_complete", world_number)
 	$GUI/WinScreen.show()
 	
 

@@ -80,7 +80,7 @@ func _on_SunriseTimer_timeout():
 
 func _on_RestartButton_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	SceneSwitcher.goto_scene(self.filename)
 
 
 func _on_QuitButton_pressed() -> void:

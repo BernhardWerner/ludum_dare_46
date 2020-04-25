@@ -7,7 +7,8 @@ var current_scene = null
 func deferred_goto_scene(path) -> void:
 	var new_scene = ResourceLoader.load(path)
 	
-	current_scene.free()
+	if (weakref(current_scene).get_ref()):
+		current_scene.free()
 	current_scene = new_scene.instance()
 
 	get_tree().get_root().add_child(current_scene)

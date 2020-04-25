@@ -18,10 +18,7 @@ func update_world_locks() -> void:
 
 func save_data() -> Dictionary:
 	return {        
-			"filename" : get_filename(),
-			"parent" : get_parent().get_path(),
-			"pos_x" : 0,
-			"pos_y" : 0,
+			"node_path" : self.get_path(),
 			
 			"worlds_unlocked" : worlds_unlocked,
 			"server_numbers" : server_numbers
@@ -32,5 +29,6 @@ func save_data() -> Dictionary:
 
 func _ready() -> void:
 	add_to_group("persist")
+	print(self.filename)
 
 ######################### SIGNALS #########################

@@ -9,10 +9,14 @@ onready var player : KinematicBody2D
 
 ######################### CUSTOM METHODS #########################
 
+
+
+
 func set_broken_servers(value : int) -> void:
 	number_of_broken_servers = value
 	if number_of_broken_servers <= 0:
 		$GUI/SystemFailureBar.value = 0
+
 
 ######################### BUILT-INS #########################
 
@@ -69,6 +73,7 @@ func _on_SunriseTimer_timeout():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	GlobalVariables.server_numbers[world_number - 1] = min(GlobalVariables.server_numbers[world_number - 1] + 1, 10)
 	GlobalVariables.update_world_locks()
+	SaveSystem.save_game()
 	$GUI/WinScreen.show()
 	
 

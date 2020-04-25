@@ -1,7 +1,7 @@
 extends Node
 
-var worlds_unlocked := [true, false, false, false]
-var server_numbers  := [1, 0, 0, 0]
+var worlds_unlocked := [true, true, false, false]
+var server_numbers  := [7, 2, 0, 0]
 var servers_needed_to_unlock := [0, 5, 10, 16]
 
 ######################### CUSTOM METHODS #########################
@@ -16,9 +16,21 @@ func update_world_locks() -> void:
 			server_numbers[j]  = 1
 
 
+func save_data() -> Dictionary:
+	return {        
+			"filename" : get_filename(),
+			"parent" : get_parent().get_path(),
+			"pos_x" : 0,
+			"pos_y" : 0,
+			
+			"worlds_unlocked" : worlds_unlocked,
+			"server_numbers" : server_numbers
+	}
+
+
 ######################### BUILT-INS #########################
 
 func _ready() -> void:
-	pass
+	add_to_group("persist")
 
 ######################### SIGNALS #########################

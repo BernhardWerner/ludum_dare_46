@@ -1,19 +1,20 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://AGENCYB.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Graphics/title_font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Graphics/button.theme" type="Theme" id=3]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=4]
-[ext_resource path="res://AGENCYR.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://Graphics/text_font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Graphics/button_small.theme" type="Theme" id=6]
+[ext_resource path="res://Graphics/key_f.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/server_00_broken.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/server_00_running.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/player_02.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
 use_filter = true
 font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 5 )
 
 [node name="MainMenu" type="Control" groups=[
 "menu",
@@ -29,6 +30,9 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.188235, 0.223529, 0.25098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
@@ -80,12 +84,11 @@ text = "Quit"
 
 [node name="TutorialContainer" type="VBoxContainer" parent="HBoxContainer"]
 margin_left = 480.0
-margin_top = 81.0
 margin_right = 860.0
-margin_bottom = 349.0
+margin_bottom = 430.0
 size_flags_horizontal = 7
-size_flags_vertical = 4
-custom_constants/separation = 50
+size_flags_vertical = 5
+custom_constants/separation = 20
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -99,22 +102,227 @@ text = "How to play"
 align = 1
 valign = 1
 
-[node name="Text" type="Label" parent="HBoxContainer/TutorialContainer"]
-margin_top = 89.0
+[node name="TutorialContent" type="Control" parent="HBoxContainer/TutorialContainer"]
+margin_top = 59.0
 margin_right = 380.0
-margin_bottom = 178.0
+margin_bottom = 370.0
+size_flags_vertical = 3
+
+[node name="Story" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_horizontal = 3
-custom_fonts/font = SubResource( 2 )
-text = "You are the server administrator in a big software company. Unfortunately, your boss spends a lot of money on fancy architecture, but not on reliable hardware. So, during today's night shift, your main job is tokeep all servers running. Good  luck!"
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 5 )
+text = "You are the server administrator in a big software company. Unfortunately, your boss spends a lot of money on fancy architecture, but not on reliable hardware. So, during today's night shift, your main job is to keep all servers running. Good luck!"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ServerMechanic" type="VBoxContainer" parent="HBoxContainer/TutorialContainer/TutorialContent"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_right = 380.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 5 )
+text = "Each server will break regularly; changing its light from blue to orange."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_left = 182.0
+margin_top = 30.0
+margin_right = 198.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 16, 32 )
+size_flags_horizontal = 4
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_top = 72.0
+margin_right = 380.0
+margin_bottom = 92.0
+custom_fonts/font = ExtResource( 5 )
+text = "When you are next to a server, you can fix it by pressing the F key."
+autowrap = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_left = 182.0
+margin_top = 102.0
+margin_right = 198.0
+margin_bottom = 118.0
+size_flags_horizontal = 4
+texture = ExtResource( 7 )
+
+[node name="Label3" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_top = 128.0
+margin_right = 380.0
+margin_bottom = 171.0
+custom_fonts/font = ExtResource( 5 )
+text = "Also, when you are close to a server, you can see how long it takes for it to break."
+autowrap = true
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic"]
+margin_left = 182.0
+margin_top = 181.0
+margin_right = 198.0
+margin_bottom = 213.0
+rect_min_size = Vector2( 16, 32 )
+size_flags_horizontal = 4
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ServerMechanic2" type="VBoxContainer" parent="HBoxContainer/TutorialContainer/TutorialContent"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic2"]
+margin_right = 380.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 5 )
+text = "When there are broken servers, the system integrity will drop. When it hits 0%, you get fired."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic2"]
+margin_left = 182.0
+margin_top = 53.0
+margin_right = 198.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 16, 32 )
+size_flags_horizontal = 4
+texture = ExtResource( 8 )
+expand = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic2"]
+margin_top = 95.0
+margin_right = 380.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 5 )
+text = "When all servers are fixed, the system integrity jumps back to 100%."
+autowrap = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic2"]
+margin_left = 182.0
+margin_top = 125.0
+margin_right = 198.0
+margin_bottom = 141.0
+size_flags_horizontal = 4
+texture = ExtResource( 7 )
+
+[node name="Label3" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/ServerMechanic2"]
+margin_top = 151.0
+margin_right = 380.0
+margin_bottom = 240.0
+custom_fonts/font = ExtResource( 5 )
+text = "When you keep the system running until the sunrise, you keep your job! Also, your boss will buy a new server for the next day; up to 10 per building. And when there are enough servers running in total, new buildings get unlocked with new challenges for you."
+autowrap = true
+
+[node name="Movement" type="VBoxContainer" parent="HBoxContainer/TutorialContainer/TutorialContent"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_right = 380.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 5 )
+text = "Move left and right with the arrow keys and jump with the space bar."
+autowrap = true
+
+[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_left = 78.0
+margin_top = 25.0
+margin_right = 302.0
+margin_bottom = 57.0
+size_flags_horizontal = 4
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_top = 62.0
+margin_right = 380.0
+margin_bottom = 82.0
+custom_fonts/font = ExtResource( 5 )
+text = "When at wall while in midair, press against the wall to slide down."
+autowrap = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_left = 78.0
+margin_top = 87.0
+margin_right = 302.0
+margin_bottom = 119.0
+size_flags_horizontal = 4
+texture = ExtResource( 10 )
+
+[node name="Label2" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_top = 124.0
+margin_right = 380.0
+margin_bottom = 144.0
+custom_fonts/font = ExtResource( 5 )
+text = "While sliding on a wall, press the space bar to jump upwards along the wall."
+autowrap = true
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_left = 78.0
+margin_top = 149.0
+margin_right = 302.0
+margin_bottom = 181.0
+size_flags_horizontal = 4
+texture = ExtResource( 10 )
+
+[node name="Label3" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_top = 186.0
+margin_right = 380.0
+margin_bottom = 229.0
+custom_fonts/font = ExtResource( 5 )
+text = "While close to a wall, press away from the wall and press the space bar to jump away from the wall."
+autowrap = true
+
+[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/TutorialContainer/TutorialContent/Movement"]
+margin_left = 78.0
+margin_top = 234.0
+margin_right = 302.0
+margin_bottom = 266.0
+size_flags_horizontal = 4
+texture = ExtResource( 10 )
+
+[node name="FinalTip" type="Label" parent="HBoxContainer/TutorialContainer/TutorialContent"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/font = ExtResource( 5 )
+text = "As a final tip: 
+When a building is opened, it only has a single server. That's a great opportunity to make yourself familiar with the controls and to look around the building."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ButtonContainer" type="HBoxContainer" parent="HBoxContainer/TutorialContainer"]
-margin_top = 228.0
+margin_top = 390.0
 margin_right = 380.0
-margin_bottom = 268.0
+margin_bottom = 430.0
 custom_constants/separation = 200
 alignment = 1
 
@@ -135,3 +343,5 @@ theme = ExtResource( 6 )
 text = ">"
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ButtonContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/TutorialContainer/ButtonContainer/LeftButton" to="." method="_on_LeftButton_pressed"]
+[connection signal="pressed" from="HBoxContainer/TutorialContainer/ButtonContainer/RightButton" to="." method="_on_RightButton_pressed"]

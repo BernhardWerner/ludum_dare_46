@@ -54,7 +54,7 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	$GUI/SystemFailureBar.value += number_of_broken_servers * delta
+	$GUI/SystemFailureBar.value += self.number_of_broken_servers * delta
 	$GUI/SystemFailureLabel.text = round(100 - 100 * $GUI/SystemFailureBar.value / $GUI/SystemFailureBar.max_value) as String + "%"
 	
 	$Sky.material.set_shader_param("time_passed", 1 - $SunriseTimer.time_left / time_to_sunrise)
@@ -62,7 +62,7 @@ func _process(delta: float) -> void:
 ######################### SIGNALS #########################
 
 func _on_Server_state_changed(new_state : int) -> void:
-	self.number_of_broken_servers += 2 * new_state - 1
+	self.number_of_broken_servers = clamp(self.number_of_broken_servers + 2 * new_state - 1, 0, $Servers.get_child_count())
 
 
 func _on_SystemFailureBar_value_changed(value: float) -> void:

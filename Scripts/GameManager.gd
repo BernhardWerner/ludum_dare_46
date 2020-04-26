@@ -70,6 +70,7 @@ func _on_SystemFailureBar_value_changed(value: float) -> void:
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		$GUI/GameOver.show()
+		$GUI/GameOver/GameOverSound.play()
 
 
 func _on_SunriseTimer_timeout():
@@ -77,6 +78,7 @@ func _on_SunriseTimer_timeout():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	emit_signal("level_complete", world_number)
 	$GUI/WinScreen.show()
+	$GUI/WinScreen/VictoryJingle.play()
 	
 
 

@@ -1,9 +1,10 @@
 extends Node
 
-const servers_needed_to_unlock := [0, 5, 10, 16]
+const servers_needed_to_unlock := [0, 6, 10, 16]
+const server_start_number := [3, 3, 2, 2]
 
 var worlds_unlocked := [true, false, false, false]
-var server_numbers  := [1, 0, 0, 0]
+var server_numbers  := [3, 0, 0, 0]
 
 var menu_bgm := AudioStreamPlayer.new()
 
@@ -40,7 +41,7 @@ func update_world_locks() -> void:
 	for j in range(4):
 		if sum >= servers_needed_to_unlock[j] and not worlds_unlocked[j]:
 			worlds_unlocked[j] = true
-			server_numbers[j]  = 1
+			server_numbers[j]  = server_start_number[j]
 
 ######################### BUILT-INS #########################
 

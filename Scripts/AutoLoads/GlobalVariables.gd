@@ -3,8 +3,8 @@ extends Node
 const servers_needed_to_unlock := [0, 6, 10, 16]
 const server_start_number := [3, 3, 2, 2]
 
-var worlds_unlocked := [true, false, false, false]
-var server_numbers  := [3, 0, 0, 0]
+var worlds_unlocked := [true, true, true, true]
+var server_numbers  := [3, 3, 2, 2]
 
 var menu_bgm := AudioStreamPlayer.new()
 

@@ -75,8 +75,8 @@ func _on_Server_state_changed(new_state : int) -> void:
 		STATES.RUNNING:
 			$BackSprite/Lights.self_modulate = running_color * 1.3
 			$Pulse.visible = false
-			$Health.max_value = $BreakTimer.wait_time
 			set_break_time()
+			$Health.max_value = $BreakTimer.wait_time
 			$BreakTimer.start()
 			$SoundTimer.stop()
 		STATES.BROKEN:

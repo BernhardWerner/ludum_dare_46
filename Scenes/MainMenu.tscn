@@ -277,8 +277,8 @@ anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 custom_fonts/font = ExtResource( 5 )
-text = "As a final tip: 
-When a building is opened, it only has a single server. That's a great opportunity to make yourself familiar with the controls and to look around the building."
+text = "A final tip: 
+When a building is opened, it only has a few servers. That's a great opportunity to make yourself familiar with the controls and to look around the building."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -297,6 +297,7 @@ margin_right = 90.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 40, 40 )
 theme = ExtResource( 6 )
+disabled = true
 text = "<"
 
 [node name="RightButton" type="Button" parent="HBoxContainer/TutorialContainer/ButtonContainer"]
